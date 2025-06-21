@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YogoonaTheatre</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #f5f5f5;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1 style="color: #333;">Yogoona Perfomance Gallery</h1>
+        
+        <!-- Top Row -->
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <img src="images/YoogonaTheatre/IMG-20250621-WA0018.jpg" alt="Image 1" 
+                 style="width: 30%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: transform 0.2s;"
+                 onclick="enlargeImage(this)">
+            <img src="images/YoogonaTheatre/IMG-20250621-WA0019.jpg" alt="Image 2" 
+                 style="width: 30%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: transform 0.2s;"
+                 onclick="enlargeImage(this)">
+            <img src="images/YoogonaTheatre/IMG-20250621-WA0020.jpg" alt="Image 3" 
+                 style="width: 30%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: transform 0.2s;"
+                 onclick="enlargeImage(this)">
+        </div>
+        
+        <!-- Bottom Row -->
+        <div style="display: flex; justify-content: space-between;">
+            <img src="images/YoogonaTheatre/IMG-20250621-WA0021.jpg" alt="Image 4" 
+                 style="width: 30%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: transform 0.2s;"
+                 onclick="enlargeImage(this)">
+            <img src="images/YoogonaTheatre/IMG-20250621-WA0024.jpg" alt="Image 5" 
+                 style="width: 30%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: transform 0.2s;"
+                 onclick="enlargeImage(this)">
+            <img src="https://via.placeholder.com/200x150?text=Image+6" alt=" " 
+                 style="width: 30%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: transform 0.2s;"
+                 onclick="enlargeImage(this)">
+        </div>
+    </div>
+
+    <!-- Modal for enlarged image -->
+    <div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); z-index: 1000; text-align: center;">
+        <span style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeModal()">&times;</span>
+        <img id="enlargedImg" style="margin: auto; display: block; max-width: 80%; max-height: 80%; margin-top: 5%;">
+    </div>
+        <li><a href="index.html" class="button">←Back To Homepage←</a></li>
+    <script>
+        function enlargeImage(img) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("enlargedImg");
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+        }
+        
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scrolling
+        }
+        
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
